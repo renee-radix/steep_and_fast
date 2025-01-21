@@ -12,23 +12,37 @@ function draw() {
   quadraticVertex(width/2, 650, width, height/3);
   endShape();
 
+  fill(0);
+  noStroke();
+  ellipse(200, 375, 110, 50);
+
   strokeWeight(3);
   push();
   rotate(radians(45));
+  stroke(150);
   rect(100, -50, 100, 100);
   pop();
 
-  strokeWeight(.5);
-  fill(255);
+  noStroke();
+  fill(200, 200);
   triangle(4, 38, 9, 36, 35, 65);
-  fill(200);
   triangle(28, 32, 24, 37, 52, 59);
   triangle(53, 18, 57, 14, 81, 39);
   triangle(33, 21, 37, 17, 61, 46);
+  triangle(69, 13, 73, 8, 90, 31);
+
+  strokeWeight(3);
+  stroke(255);
 
   beginShape();
-  vertex(125, 31);
+  noFill();
+  vertex(146, 373);
+  vertex(155, 346);
+  vertex(165, 361);
 
+
+
+  endShape();
 
 
   print("Mouse X: " + mouseX);
