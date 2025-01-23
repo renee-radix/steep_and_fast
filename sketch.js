@@ -1,5 +1,22 @@
+let pointNumber = 5;
+
+// create one of these per spiky guy
+let randomRadiuses = [];
+let randomRadiuses2 = [];
+
 function setup() {
   createCanvas(400, 400);
+
+  for (let i = 0; i < 360/pointNumber; i++){
+    // mess with these numbers to create different effects
+    x = random(20) + 20;
+    randomRadiuses.push(x);
+  }
+  for (let i = 0; i < 360/pointNumber; i++){
+    // mess with these numbers to create different effects
+    x = random(20) + 20;
+    randomRadiuses2.push(x);
+  }
 }
 
 function draw() {
@@ -78,12 +95,34 @@ function draw() {
   endShape(CLOSE);
   pop();
 
-
-
-  // Circle cut up into 16 equidistant points, the inner points of the
-  // logo are tracing a different circle with 8 equal points around
-  // So I'd want to write code that stores the points around a circle so I can make a triangle with them
-
-  // If that idea is too complicated just make a spiky circle in the other corner and call it good
-
+  spikyGuy(32, 310, randomRadiuses);
+  spikyGuy(353, 341, randomRadiuses2);
 }
+
+  function spikyGuy(xLoc, yLoc, array){
+    push()
+    translate(xLoc, yLoc);
+    let initialRadius = 20;
+    let radius = initialRadius;
+    noStroke();
+    fill(100);
+    beginShape();
+    for(let i = 0; i < (360/pointNumber); i++) {
+      const x = cos(radians(i * pointNumber)) * radius;
+      const y = sin(radians(i * pointNumber)) * radius;
+      vertex(x, y);
+  
+    //Change the radius for the next vertex
+      if(radius == initialRadius) {
+        radius = array[i];
+       }else{
+        radius = initialRadius
+       }
+      }
+    endShape(); 
+    pop(); 
+  }
+  // More spiky guys? In the background?
+  // Something in the top right corner that's steep
+  // more speed lines 
+
