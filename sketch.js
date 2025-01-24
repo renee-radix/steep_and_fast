@@ -64,7 +64,7 @@ function draw() {
   // obscuring black circle at base of u bend
   fill(0);
   noStroke();
-  ellipse(200, 375, 113, 50);
+  ellipse(200, 375, 105, 50);
 
   // outline of companion cube
   strokeWeight(3);
@@ -91,11 +91,11 @@ function draw() {
   triangle(58, 150, 55, 151, 74, 170);
 
   //spikes
-  strokeWeight(3);
+  strokeWeight(5);
   stroke(250);
   beginShape();
-  fill(255);
-  vertex(146, 375);
+  noFill();
+  vertex(146, 372);
   vertex(155, 346);
   vertex(165, 361);
   vertex(172, 332);
@@ -107,7 +107,7 @@ function draw() {
   vertex(237, 347);
   vertex(241, 367);
   vertex(252, 351);
-  vertex(255, 375);
+  vertex(255, 372);
   endShape();
 
 
